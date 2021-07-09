@@ -1,0 +1,63 @@
+import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs";
+import { Button } from "@chakra-ui/react";
+
+<Meta
+  title="Button"
+  component={Button}
+  argTypes={{
+    variant: {
+      table: {
+        defaultValue: { summary: "secondary" },
+      },
+    },
+  }}
+  args={{
+    children: "Button text",
+  }}
+/>
+
+export const Template = (args) => <Button {...args} />;
+
+# Button
+
+## A button communicates that users can trigger an action.
+
+Extends [Chakra UI's Button component](https://chakra-ui.com/docs/form/button).
+
+Places you’d use a button include:
+
+- Submitting a form
+- Closing a modal
+- Moving to the next step in a flow
+
+A button can have an icon and/or text.
+
+The default variant is secondary, which we set in the theme configuration.
+
+<Canvas>
+  <Story name="basic">
+    <Button>Button text</Button>
+  </Story>
+</Canvas>
+
+<ArgsTable story="basic" />
+
+### Sizes
+
+Use the `size` prop to change the size of the button. You can set the value to
+`xs`, `sm`, `md`, or `lg`.
+
+<Canvas>
+  <Story name="sizes · xs" args={{ size: "xs" }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="sizes · sm" args={{ size: "sm" }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="sizes · md" args={{ size: "md" }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="sizes · lg" args={{ size: "lg" }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
